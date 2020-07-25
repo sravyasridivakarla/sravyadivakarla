@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<style>
+    
+</style>
+
+<head>
+    
+        
+        
+        
+    <script>
+    
+    
+    function getRandomInt(min, max) {
+  		min = Math.ceil(min);
+  		max = Math.floor(max);
+  		return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+	}
+    
+    function getRandomNoun(){
+		var noun = ["book", "ostrich", "witch","hobo", "Trump" , "Obama", "Walmart", "Penny", "frisbee"];
+		var number = getRandomInt(0, 8);
+        document.getElementById("noun").value = noun[number];
+	}
+    
+    function getRandomNoun2(){
+		var noun = ["book", "ostrich", "witch","hobo", "Trump" , "Obama", "Walmart", "Penny", "frisbee"];
+		var number = getRandomInt(0, 8);
+        document.getElementById("noun2").value = noun[number];
+	}
+    
+     function getRandomAdjective(){
+		var adjective = ["prickly", "hairy", "smelly","beautiful", "interesting" , "weird", "scary", "cute", "squishy", "soft"];
+		var number = getRandomInt(0, 9);
+        document.getElementById("adj").value =  adjective[number];
+	}
+    
+    function getRandomVerbed(){
+    	var verbed = ["jumped", "pranced", "fell","screamed", "fainted" , "tripped", "cried"];
+		var number = getRandomInt(0, 6);
+        document.getElementById("verb").value = verbed[number];
+    }
+    
+    function mad(){
+        var noun = document.getElementById("noun").value; 
+        var noun2 = document.getElementById("noun2").value; 
+        var verb = document.getElementById("verb").value; 
+        var adj = document.getElementById("adj").value
+       
+        
+        var sentence = "The " +adj + " "+ noun + " " + verb + " over the " + noun2;
+        document.getElementById("madlib").innerHTML = sentence;
+        document.getElementById("madlib2").innerHTML= sentence2; 
+    
+    }
+    
+    function refreshed(){
+    
+   		 document.getElementById("noun").value = "";
+         document.getElementById("noun2").value = "";
+         document.getElementById("verb").value = "";
+		 document.getElementById("adj").value = "";
+	
+	}
+        
+        
+    </script>
+        
+        
+
+            
+            
+            
+        
+    
+</head>
+    
+    <body>
+        
+        
+        <label> Noun</label>
+        
+        <input id = "noun"/ >
+        <button onClick="getRandomNoun()">Go Random</button>
+        
+        <br/>
+        <br/>
+        
+        <label>Another Noun  </label> 
+        
+        <input id = "noun2"/ >
+        <button onClick="getRandomNoun2()">Go Random</button>
+        
+        <br/>
+        <br/>
+        <label>Adjective</label> 
+        
+        <input id = "adj"/ >
+        <button onClick="getRandomAdjective()">Go Random</button>
+        
+        <br/>
+        <br/>
+        
+        <label> Verb ending in ed </label> 
+        
+        <input id = "verb"/>
+        <button onClick="getRandomVerbed()">Go Random</button>
+        <br/>
+        <br/>
+        
+        
+        
+        <button onClick="mad()">Go Mad</button>
+        <button onClick="refreshed()">Refresh</button>
+        <p id = "madlib"> </p>
+     
+     
+    </body>
+
+
+
+
+
+
+
+
+</html>
